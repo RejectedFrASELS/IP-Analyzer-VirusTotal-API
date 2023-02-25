@@ -11,7 +11,7 @@ print("""
   | ||  __/   / ___ \| | | | (_| | | |_| |/ /  __/ |      \ V /   | |  
  |___|_|     /_/   \_\_| |_|\__,_|_|\__, /___\___|_|       \_/    |_|  
                                     |___/                                                                        
- This tool scans IP Addresses in an excel file and reports to you using VirusTotal API
+ This tool scans IP Addresses from an excel file using VirusTotal API and reports to you.
                                 
                                 By RejectedFrASELS
  """)
@@ -100,6 +100,5 @@ with open('output.txt', 'w') as f:
                 f.write(f"\t{engine}: {result}\n")
         f.write("="*50 + "\n")
 
-print("The output also created as a .txt file in same directory. \n")
-print("Press 'Enter' to exit")
+print("The output also created as a .txt file in same directory. \n Press 'Enter' to exit")
 x = input()
