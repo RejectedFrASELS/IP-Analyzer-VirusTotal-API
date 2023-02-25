@@ -1,6 +1,6 @@
 # IP-Analyzer-VirusTotal-API
 
-This tool scans IP Addresses in an excel file and reports to you using VirusTotal API
+This tool scans IP Addresses from an excel file using VirusTotal API and reports to you.
 
 You can run the code in any directory, the code will search for excel files in that directory and lets you select which file's which column has IP addresses.
 The code will create a txt file report.
