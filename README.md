@@ -15,7 +15,7 @@ To run the code you need to get an API from Virus Total. More information on: ht
 3. Some excel file with IP addresses in a column
 
 ### Usage:
-1. Insert you API in code
+1. Insert your API in code
 2. Simply run it typing ```python IPChecker.py``` or however you want.
 3. Select the excel file and other credentials.
 4. You can find the report after running the code in same directory.
