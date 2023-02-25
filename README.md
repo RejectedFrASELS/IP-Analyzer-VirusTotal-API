@@ -5,7 +5,7 @@ This tool scans IP Addresses from an excel file using VirusTotal API and reports
 You can run the code in any directory, the code will search for excel files in that directory and lets you select which file's which column has IP addresses.
 The code will create a txt file report.
 
-To run the code you need to get an API from Virus Total. More information on: https://support.virustotal.com/hc/en-us/articles/115002100149-API
+To run the code you need to get an API from Virus Total. More information at: https://support.virustotal.com/hc/en-us/articles/115002100149-API
 
 ## How to Use
 
