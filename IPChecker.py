@@ -65,7 +65,7 @@ with open('output.txt', 'w') as f:
 
         headers = {
             "accept": "application/json",
-            "x-apikey": "3d7ced8d5744b0e483a37363629926825842f18c5e1d34b7e9359a106b01bcca" #API KEY HERE
+            "x-apikey": "APIKEY" #API KEY HERE
         }
 
         response = requests.get(url, headers=headers)
