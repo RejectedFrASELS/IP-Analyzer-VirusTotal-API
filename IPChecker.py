@@ -41,8 +41,8 @@ workbook = openpyxl.load_workbook(selected_file_name)
 
 #Select the worksheet you want to read from
 print("\nEnter the Worksheet's name that has the IP Addresses(usually is 'Sheet1'):")
-column = input()
-worksheet = workbook['Sheet1']
+sheet = input()
+worksheet = workbook[sheet]
 
 
 # Get the values from the column you want to use
