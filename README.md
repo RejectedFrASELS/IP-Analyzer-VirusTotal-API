@@ -11,11 +11,12 @@ To run the code you need to get an API from Virus Total. More information at: ht
 
 ### Requirements:
 1. Python 3
-2. Some python libraries: requests, json, openpyxl, glob, os
+2. Some python libraries: ```pip install -r requirements.txt```
 3. Some excel file with IP addresses in a column
 
 ### Usage:
 1. Insert your API in code
-2. Simply run it by typing ```python IPChecker.py``` or however you want.
-3. Select the excel file and other credentials.
-4. You can find the report in same directory after running the code.
+2. Install libraries: ```pip install -r requirements.txt```
+3. Simply run it by typing ```python IPChecker.py``` or however you want.
+4. Select the excel file and other credentials.
+5. You can find the report in same directory after running the code.
