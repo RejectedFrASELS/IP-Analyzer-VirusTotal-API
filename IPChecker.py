@@ -25,7 +25,8 @@ if len(excel_files) > 0:
     for i, file in enumerate(excel_files):
         print(f"{i+1}. {os.path.basename(file)}")
 else:
-    print("\nNo Excel files found in directory.")
+    print("\nNo Excel files found in directory.\n Press 'Enter' to exit")
+    x = input()
     exit()
 
 # Prompt the user to select an Excel file from the list
@@ -52,12 +53,17 @@ print("\nSelected column "+column+" \n")
 
 column_values = [cell.value for cell in worksheet[column]]
 
-no_duplicated_column_values = list(set(column_values)) #ayni ipleri teke indir
+no_duplicated_column_values = list(set(column_values)) #no dublicated ips
 
 #print(no_duplicated_column_values)
 
+#Determine the output txt file's name 
+print("What do you want to call the 'output' file?:")
+output_name = input()
+output_txt = output_name + ".txt"
+
 # Open the output file
-with open('output.txt', 'w') as f:
+with open(output_txt, 'w') as f:
     # Use the values in a for loop
     for value in no_duplicated_column_values:
         base_url = "https://www.virustotal.com/api/v3/ip_addresses/"
@@ -65,7 +71,7 @@ with open('output.txt', 'w') as f:
 
         headers = {
             "accept": "application/json",
-            "x-apikey": "APIKEY" #API KEY HERE
+            "x-apikey": "API_KEY_HERE" ########################## API KEY HERE
         }
 
         response = requests.get(url, headers=headers)
@@ -100,5 +106,5 @@ with open('output.txt', 'w') as f:
                 f.write(f"\t{engine}: {result}\n")
         f.write("="*50 + "\n")
 
-print("The output also created as a .txt file in same directory. \n Press 'Enter' to exit")
+print("The output is also created as " + output_txt + " in same directory. \n Press 'Enter' to exit")
 x = input()
