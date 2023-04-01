@@ -9,6 +9,9 @@ If you willing to check the IPs from an txt file, paste them line by line in ipl
 
 To run the code you need to get an API from Virus Total. More information at: https://support.virustotal.com/hc/en-us/articles/115002100149-API
 
+#### This code also implemented in a Web App
+See here: [SOC-Tool-Box](https://github.com/RejectedFrASELS/SOC-Tool-Box)
+
 ## How to Use
 
 ### Requirements:
