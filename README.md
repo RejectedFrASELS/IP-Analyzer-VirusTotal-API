@@ -17,7 +17,7 @@ To run the code you need to get an API from Virus Total. More information at: ht
 3. Some excel file or txt file with IP addresses in a column
 
 ### Usage:
-1. Insert your API in ```IPChecker-apikeys.txt``` line by line
+1. Insert your API Keys in ```IPChecker-apikeys.txt``` line by line. You can use multiple API Keys.
 2. Install libraries: ```pip install -r requirements.txt```
 3. Simply run it by typing ```python IPChecker.py``` ```python IPCheckerTXT.py``` or however you want.
 4. Select the excel file and other credentials.
