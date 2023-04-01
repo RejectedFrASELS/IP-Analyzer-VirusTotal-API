@@ -1,8 +1,5 @@
 import requests
 import json
-import openpyxl
-import glob
-import os
 from datetime import datetime
 
 print("""
@@ -12,54 +9,22 @@ print("""
   | ||  __/   / ___ \| | | | (_| | | |_| |/ /  __/ |      \ V /   | |  
  |___|_|     /_/   \_\_| |_|\__,_|_|\__, /___\___|_|       \_/    |_|  
                                     |___/                                                                        
- This tool scans IP Addresses from an excel file using VirusTotal API and reports to you.
-                                
-                                By RejectedFrASELS
+
  """)
 
-# Use the glob module to find all Excel files in the directory
-excel_files = glob.glob(os.path.join('*.xlsx'))
 
-# Print the list of Excel files in the directory
-if len(excel_files) > 0:
-    print("\nExcel files in directory:")
-    for i, file in enumerate(excel_files):
-        print(f"{i+1}. {os.path.basename(file)}")
-else:
-    print("\nNo Excel files found in directory.\n Press 'Enter' to exit")
-    x = input()
-    exit()
+my_file = open("iplist.txt", "r")
+  
+# reading the file
+data = my_file.read()
+  
+# replacing end splitting the text 
+# when newline ('\n') is seen.
+check_list = data.split("\n")
+my_file.close()
 
-# Prompt the user to select an Excel file from the list
-selected_file_index = int(input("Select an Excel file (enter the number): "))
-if selected_file_index < 1 or selected_file_index > len(excel_files):
-    print("Invalid selection.")
 
-# Get the file name of the selected Excel file
-selected_file_name = os.path.basename(excel_files[selected_file_index-1])
-print(f"Selected file: {selected_file_name}")
-# Load the Excel file
-workbook = openpyxl.load_workbook(selected_file_name)
-
-try:
-    #Select the worksheet you want to read from
-    print("\nEnter the Worksheet's name that has the IP Addresses(usually is 'Sheet1'):")
-    sheet = input()
-    worksheet = workbook[sheet]
-except:
-    print("Invalid selection.\n Press 'Enter' to exit")
-    x = input()
-    exit()
-
-# Get the values from the column you want to use
-print("\nEnter the Column that has the IP Addresses:")
-column = input()
-print("\nSelected column "+column+" \n")
-
-column_values = [cell.value for cell in worksheet[column]]
-
-no_duplicated_column_values = list(set(column_values)) #no dublicated ips
-
+no_duplicated_check_list = list(set(check_list)) #no dublicated ips
 
 #Determine the output txt file's name 
 print("What do you want to call the 'output' file?:")
@@ -83,11 +48,11 @@ counter = 0
 # Open the output file
 with open(output_txt, 'w') as f:
     # Use the values in a for loop
-
+    
     f.write(f"Scan started at {formatted_time} \n")
     f.write("="*50 + "\n")
-
-    for value in no_duplicated_column_values:
+    
+    for value in no_duplicated_check_list:
         base_url = "https://www.virustotal.com/api/v3/ip_addresses/"
         url = f"{base_url}{value}"
 
